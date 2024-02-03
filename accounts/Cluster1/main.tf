@@ -1,10 +1,6 @@
 module "confluent_kafka_topics" {
   source = "../../modules/confluent_kafka_topics_module"
 
-  # kafka_id            = var.kafka_id
-  # kafka_rest_endpoint = var.kafka_rest_endpoint
-  # kafka_api_key       = var.kafka_api_key
-  # kafka_api_secret    = var.kafka_api_secret
   kafka_id              = confluent_kafka_cluster.dedicated.id
   kafka_rest_endpoint   = confluent_kafka_cluster.dedicated.rest_endpoint
   kafka_api_key         = confluent_api_key.app-manager-kafka-api-key.id
