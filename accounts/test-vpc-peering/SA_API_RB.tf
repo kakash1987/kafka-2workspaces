@@ -121,5 +121,3 @@ output "confluent_api_key2_secret" {
   value = confluent_api_key.app-manager-kafka-api-key2.secret
   sensitive = true
 }
-  value = confluent_service_account.app-manager2.kind
-}
