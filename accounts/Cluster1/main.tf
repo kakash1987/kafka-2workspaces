@@ -52,9 +52,9 @@ module "confluent_kafka_topics" {
   environment_id        = data.terraform_remote_state.confluent_environment.outputs.id
   kafka_api_version     = data.terraform_remote_state.confluent_kafka_cluster.outputs.api_version
   kafka_kind            = data.terraform_remote_state.confluent_kafka_cluster.outputs.kind
-  confluent_service_account_id          = data.terraform_remote_state.confluent_service_account.app-manager.outputs.id
-  confluent_service_account_api_version = data.terraform_remote_state.confluent_service_account.app-manager.outputs.api_version
-  confluent_service_account_kind        = data.terraform_remote_state.confluent_service_account.app-manager.outputs.kind
+  confluent_service_account_id          = data.terraform_remote_state.confluent_service_account.outputs.id
+  confluent_service_account_api_version = data.terraform_remote_state.confluent_service_account.outputs.api_version
+  confluent_service_account_kind        = data.terraform_remote_state.confluent_service_account.outputs.kind
   topics                = jsondecode(file("topics.json"))
 
 }
