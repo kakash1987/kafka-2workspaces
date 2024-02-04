@@ -1,0 +1,56 @@
+{
+  "INTOP03.Optima.ChangeSets2": {
+    "config": {
+      "cleanup.policy": null,
+      "retention.ms": null
+    },
+    "partitions_count": 1,
+    "consumer": "Optima.ChangeSetReceiver12",
+    "producer": "Optima.Debezium12"
+  },
+  "INTOP03.Optima.ChangeSetSegments2": {
+    "config": {
+      "cleanup.policy": null,
+      "retention.ms": null
+    },
+    "partitions_count": 1,
+    "consumer": "Optima.ChangeSegmentsReceiver12",
+    "producer": "Optima.Debezium22"
+  },
+  "INTOP03.InteroperabilityPlatform.PartnerUpdates2": {
+    "config": {
+      "cleanup.policy": null,
+      "retention.ms": null
+    },
+    "partitions_count": 1,
+    "consumer": "InteroperabilityPlatform.WorkerService12",
+    "producer": "DataPump.Processor12"
+  },
+  "INTOP04.Optima.ChangeSets2": {
+    "config": {
+      "cleanup.policy": null,
+      "retention.ms": null
+    },
+    "partitions_count": 1,
+    "consumer": "Optima.ChangeSetReceiver22",
+    "producer": "Optima.Debezium32"
+  },
+  "INTOP04.Optima.ChangeSetSegments2": {
+    "config": {
+      "cleanup.policy": null,
+      "retention.ms": null
+    },
+    "partitions_count": 1,
+    "consumer": "Optima.ChangeSegmentsReceiver22",
+    "producer": "Optima.Debezium42"
+  },
+  "INTOP04.InteroperabilityPlatform.PartnerUpdates2": {
+    "config": {
+      "cleanup.policy": null,
+      "retention.ms": null
+    },
+    "partitions_count": 1,
+    "consumer": "InteroperabilityPlatform.WorkerService22",
+    "producer": "DataPump.Processor22"
+  }
+}
