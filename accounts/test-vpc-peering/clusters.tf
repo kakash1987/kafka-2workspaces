@@ -1,8 +1,8 @@
 resource "confluent_kafka_cluster" "dedicated" {
   display_name = "inventory"
   availability = "SINGLE_ZONE"
-  cloud        = "AWS"
-  region       = var.region
+  cloud        = confluent_network.peering.cloud
+  region       = confluent_network.peering.region
   dedicated {
     cku = 1
   }
