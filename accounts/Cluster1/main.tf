@@ -1,6 +1,6 @@
 
 data "terraform_remote_state" "confluent_environment" {
-  backend = "local"
+  backend = "remote"
   config = {
     organization = "KakashDOOEL"
     workspaces = {
@@ -10,7 +10,7 @@ data "terraform_remote_state" "confluent_environment" {
 }
 
 data "terraform_remote_state" "confluent_service_account" {
-  backend = "local"
+  backend = "remote"
   config = {
     organization = "KakashDOOEL"
     workspaces = {
@@ -20,7 +20,7 @@ data "terraform_remote_state" "confluent_service_account" {
 }
 
 data "terraform_remote_state" "confluent_api_key" {
-  backend = "local"
+  backend = "remote"
   config = {
     organization = "KakashDOOEL"
     workspaces = {
@@ -30,7 +30,7 @@ data "terraform_remote_state" "confluent_api_key" {
 }
 
 data "terraform_remote_state" "confluent_kafka_cluster" {
-  backend = "local"
+  backend = "remote"
   config = {
     organization = "KakashDOOEL"
     workspaces = {
