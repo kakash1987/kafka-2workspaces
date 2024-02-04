@@ -14,7 +14,7 @@ resource "confluent_kafka_cluster" "dedicated" {
   }
   depends_on = [
     confluent_environment.staging,
-    confluent_network.peering  
+    #confluent_network.peering  
   ]
 }
 
@@ -47,7 +47,7 @@ resource "confluent_kafka_cluster" "dedicated2" {
   }
 depends_on = [
     confluent_environment.test,
-    confluent_network.peering3  
+    #confluent_network.peering3  
   ]
 }
 
