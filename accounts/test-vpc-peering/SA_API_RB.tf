@@ -27,6 +27,8 @@ output "confluent_service_account_app-manager2_api_version" {
   value = confluent_service_account.app-manager2.api_version
 }
 output "confluent_service_account_app-manager2_kind" {
+  value = confluent_service_account.app-manager2.kind
+}
 
 resource "confluent_role_binding" "app-manager-kafka-cluster-admin" {
   principal   = "User:${confluent_service_account.app-manager.id}"
