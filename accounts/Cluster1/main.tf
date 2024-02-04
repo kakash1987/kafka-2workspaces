@@ -1,5 +1,5 @@
 
-data "terraform_remote_state" "confluent_environment.staging" {
+data "terraform_remote_state" "confluent_environment" {
   backend = "remote"
   config = {
     organization = "hashicorp"
