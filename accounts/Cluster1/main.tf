@@ -4,7 +4,7 @@ data "terraform_remote_state" "confluent_environment" {
   config = {
     organization = "KakashDOOEL"
     workspaces = {
-      name = "kafka_2workspaces"
+      name = "kafka-2workspaces"
     }
   }
 }
@@ -14,7 +14,7 @@ data "terraform_remote_state" "confluent_service_account" {
   config = {
     organization = "KakashDOOEL"
     workspaces = {
-      name = "kafka_2workspaces"
+      name = "kafka-2workspaces"
     }
   }
 }
@@ -24,7 +24,7 @@ data "terraform_remote_state" "confluent_api_key" {
   config = {
     organization = "KakashDOOEL"
     workspaces = {
-      name = "kafka_2workspaces"
+      name = "kafka-2workspaces"
     }
   }
 }
@@ -34,7 +34,7 @@ data "terraform_remote_state" "confluent_kafka_cluster" {
   config = {
     organization = "KakashDOOEL"
     workspaces = {
-      name = "kafka_2workspaces"
+      name = "kafka-2workspaces"
     }
   }
 }
