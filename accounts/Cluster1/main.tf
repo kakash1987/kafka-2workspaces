@@ -9,7 +9,7 @@ data "terraform_remote_state" "confluent_environment" {
   }
 }
 
-data "terraform_remote_state" "confluent_service_account.app-manager" {
+data "terraform_remote_state" "confluent_service_account" {
   backend = "remote"
   config = {
     organization = "hashicorp"
@@ -19,7 +19,7 @@ data "terraform_remote_state" "confluent_service_account.app-manager" {
   }
 }
 
-data "terraform_remote_state" "confluent_api_key.app-manager-kafka-api-key" {
+data "terraform_remote_state" "confluent_api_key" {
   backend = "remote"
   config = {
     organization = "hashicorp"
@@ -29,7 +29,7 @@ data "terraform_remote_state" "confluent_api_key.app-manager-kafka-api-key" {
   }
 }
 
-data "terraform_remote_state" "confluent_kafka_cluster.dedicated" {
+data "terraform_remote_state" "confluent_kafka_cluster" {
   backend = "remote"
   config = {
     organization = "hashicorp"
