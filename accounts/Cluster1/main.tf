@@ -4,7 +4,7 @@ data "terraform_remote_state" "confluent_environment.staging" {
   config = {
     organization = "hashicorp"
     workspaces = {
-      name = "kafka_2_worspaces_fix"
+      name = "kafka_2workspaces"
     }
   }
 }
@@ -14,7 +14,7 @@ data "terraform_remote_state" "confluent_service_account.app-manager" {
   config = {
     organization = "hashicorp"
     workspaces = {
-      name = "kafka_2_worspaces_fix"
+      name = "kafka_2workspaces"
     }
   }
 }
@@ -24,7 +24,7 @@ data "terraform_remote_state" "confluent_api_key.app-manager-kafka-api-key" {
   config = {
     organization = "hashicorp"
     workspaces = {
-      name = "kafka_2_worspaces_fix"
+      name = "kafka_2workspaces"
     }
   }
 }
@@ -34,7 +34,7 @@ data "terraform_remote_state" "confluent_kafka_cluster.dedicated" {
   config = {
     organization = "hashicorp"
     workspaces = {
-      name = "kafka_2_worspaces_fix"
+      name = "kafka_2workspaces"
     }
   }
 }
