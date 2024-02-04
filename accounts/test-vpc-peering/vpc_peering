@@ -12,6 +12,17 @@ depends_on = [
   ]
 }
 
+output "confluent_network_peering_id" {
+  value = confluent_network.peering.id
+}
+output "confluent_network_peering_region" {
+  value = confluent_network.peering.region
+}
+output "confluent_network_peering_cloud" {
+  value = confluent_network.peering.cloud
+}
+
+
 resource "confluent_network" "peering3" {
   display_name     = "Peering Network"
   cloud            = "AWS"
