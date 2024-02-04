@@ -44,7 +44,7 @@ output "confluent_service_account_app-manager2_id" {
   value = confluent_service_account.app-manager2.id
 }
 output "confluent_service_account_app-manager2_api_version" {
-  value = confluent_service_account.app-manage2r.api_version
+  value = confluent_service_account.app-manager2.api_version
 }
 output "confluent_service_account_app-manager2_kind" {
   value = confluent_service_account.app-manager2.kind
@@ -277,21 +277,21 @@ resource "confluent_kafka_cluster" "dedicated2" {
   }
 depends_on = [
     confluent_environment.test,
-    confluent_network.peering2  
+    confluent_network.peering3  
   ]
 }
 
-output "confluent_kafka_cluster2_id" {
-  value = confluent_kafka_cluster2.dedicated.id
+output "confluent_kafka_cluster_dedicated2_id" {
+  value = confluent_kafka_cluster.dedicated2.id
 }
-output "confluent_kafka_cluster2_rest_endpoint" {
-  value = confluent_kafka_cluster2.dedicated.rest_endpoint
+output "confluent_kafka_cluster_dedicated2_rest_endpoint" {
+  value = confluent_kafka_cluster.dedicated2.rest_endpoint
 }
-output "confluent_kafka_cluster2_api_version" {
-  value = confluent_kafka_cluster2.dedicated.api_version
+output "confluent_kafka_cluster_dedicated2_api_version" {
+  value = confluent_kafka_cluster.dedicated2.api_version
 }
-output "confluent_kafka_cluster2_kind" {
-  value = confluent_kafka_cluster2.dedicated.kind
+output "confluent_kafka_cluster_dedicated2_kind" {
+  value = confluent_kafka_cluster.dedicated2.kind
 }
 
 
