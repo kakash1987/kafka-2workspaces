@@ -43,7 +43,7 @@ data "terraform_remote_state" "confluent_kafka_cluster" {
 module "confluent_kafka_topics" {
   source = "../../modules/confluent_kafka_topics_module"
 
-  kafka_id              = data.terraform_remote_state.confluent_kafka_cluster.outputs.dedicated.id
+  kafka_id              = data.terraform_remote_state.confluent_kafka_cluster.dedicated.outputs.id
   kafka_rest_endpoint   = data.terraform_remote_state.confluent_kafka_cluster.outputs.rest_endpoint
   kafka_api_key         = data.terraform_remote_state.confluent_api_key.outputs.id
   kafka_api_secret      = data.terraform_remote_state.confluent_api_key.outputs.secret
