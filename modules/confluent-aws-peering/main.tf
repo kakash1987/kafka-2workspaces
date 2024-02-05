@@ -1,5 +1,5 @@
 resource "confluent_peering" "aws" {
-  display_name = "AWS Peering"
+  display_name = "$(var.vpc_id)"
   aws {
     account         = var.aws_account_id
     vpc             = var.vpc_id
