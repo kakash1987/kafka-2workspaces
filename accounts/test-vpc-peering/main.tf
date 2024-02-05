@@ -369,7 +369,7 @@ module "peering_uk_app" {
 }
 
 
-module "peering_uk_app" {
+module "peering_uk_app2" {
   source = "../../modules/confluent-aws-peering"
 
   aws_account_id                     = var.aws_account_id
