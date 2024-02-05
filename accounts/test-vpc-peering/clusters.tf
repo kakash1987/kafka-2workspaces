@@ -31,8 +31,8 @@ output "confluent_kafka_cluster_kind" {
 resource "confluent_kafka_cluster" "dedicated2" {
   display_name = "inventory2"
   availability = "SINGLE_ZONE"
-  cloud        = confluent_network.peering2.cloud
-  region       = confluent_network.peering2.region
+  cloud        = confluent_network.peering3.cloud
+  region       = confluent_network.peering3.region
   dedicated {
     cku = 1
   }
