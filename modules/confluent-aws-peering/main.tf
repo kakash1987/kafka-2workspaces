@@ -45,7 +45,7 @@ resource "aws_route" "r" {
   for_each  = toset(data.aws_route_tables.rts.ids)
 
   route_table_id            = each.key
-  #destination_cidr_block    = var.confluent_network_aws_peering_cidr
-  destination_cidr_block    = confluent_network.peering.cidr
+  destination_cidr_block    = var.confluent_network_aws_peering_cidr
+  #destination_cidr_block    = confluent_network.peering.cidr
   vpc_peering_connection_id = data.aws_vpc_peering_connection.accepter.id
 }
