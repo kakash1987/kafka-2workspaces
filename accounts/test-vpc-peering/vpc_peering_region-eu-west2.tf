@@ -38,6 +38,7 @@ provider "aws" {
 }
 
 data "aws_vpc_peering_connection" "accepter3" {
+  provider    = aws.eu-west-2
   vpc_id      = confluent_network.peering3.aws[0].vpc
   peer_vpc_id = confluent_peering.aws3.aws[0].vpc
 }
