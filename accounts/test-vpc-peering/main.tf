@@ -366,6 +366,6 @@ module "peering_uk_app" {
   confluent_network_aws_peering_cidr = confluent_network.peering.cidr
 }
 
-output "confluent_environment_id" {
-  value = confluent_environment.staging.id
-}
+#output "confluent_environment_id" {
+#  value = confluent_environment.staging.id
+#}
