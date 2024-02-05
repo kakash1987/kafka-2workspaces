@@ -35,3 +35,9 @@ variable "customer_region" {
   type        = string
   default     = "us-east-2"
 }
+
+variable "aws_account_id" {
+  description = "The AWS Account ID of the peer VPC owner (12 digits)."
+  type        = string
+  default     = "221896574556"
+}
