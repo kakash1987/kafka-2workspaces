@@ -359,7 +359,7 @@ module "peering_uk_app" {
 
   aws_account_id                     = var.aws_account_id
   customer_region                    = var.customer.region
-  #region                             = var.customer_region
+  region                             = var.region
   vpc_id                             = var.vpc_id
   routes                             = var.routes
   confluent_environment_id           = confluent_environment.staging.id
