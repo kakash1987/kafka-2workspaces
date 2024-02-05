@@ -6,10 +6,10 @@ output "confluent_environment_id" {
   value = confluent_environment.staging.id
 }
 
-resource "confluent_environment" "test" {
-  display_name = "Test"
-}
+#resource "confluent_environment" "test" {
+#  display_name = "Test"
+#}
 
-output "confluent_environment_test_id" {
-  value = confluent_environment.test.id
-}
+#output "confluent_environment_test_id" {
+#  value = confluent_environment.test.id
+#}
