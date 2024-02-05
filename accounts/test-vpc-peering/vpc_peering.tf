@@ -16,7 +16,7 @@ depends_on = [
 resource "confluent_network" "peering3" {
   display_name     = "Peering Network"
   cloud            = "AWS"
-  region           = var.region
+  region           = var.region2
   cidr             = var.cidr2
   connection_types = ["PEERING"]
   environment {
@@ -55,7 +55,7 @@ resource "confluent_peering" "aws3" {
     account         = var.aws_account_id
     vpc             = var.vpc2_id
     routes          = var.routes2
-    customer_region = var.customer_region
+    customer_region = var.customer_region2
   }
   environment {
     id = confluent_environment.test.id
@@ -74,6 +74,10 @@ depends_on = [
 
 provider "aws" {
   region = var.customer_region
+}
+
+provider "aws" {
+  region = var.customer_region2
 }
 
 # Accepter's side of the connection.
