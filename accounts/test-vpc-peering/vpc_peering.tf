@@ -53,8 +53,8 @@ resource "confluent_peering" "aws3" {
   display_name = "AWS Peering 3"
   aws {
     account         = var.aws_account_id
-    vpc             = var.vpc_id
-    routes          = var.routes
+    vpc             = var.vpc2_id
+    routes          = var.routes2
     customer_region = var.customer_region
   }
   environment {
