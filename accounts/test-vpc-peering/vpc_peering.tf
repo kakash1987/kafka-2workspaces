@@ -107,7 +107,7 @@ data "aws_route_tables" "rts" {
   vpc_id = var.vpc_id
 }
 
-data "aws_route_tables" "rts" {
+data "aws_route_tables" "rts2" {
   vpc_id = var.vpc2_id
 }
 
