@@ -29,3 +29,9 @@ variable "confluent_network_aws_peering_vpc" {
 variable "confluent_network_aws_peering_cidr" {
   type = string
 }
+
+variable "customer_region" {
+  description = "The region of the AWS peer VPC."
+  type        = string
+  default     = "us-east-2"
+}
