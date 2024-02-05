@@ -7,17 +7,17 @@ resource "confluent_peering" "aws" {
     customer_region = var.customer_region
   }
   environment {
-    #id = var.confluent_environment_id
-     id = confluent_environment.staging.id
+    id = var.confluent_environment_id
+    #id = confluent_environment.staging.id
   }
   network {
-    #id = var.confluent_network_aws_peering_id
-     id = confluent_network.peering.id
+    id = var.confluent_network_aws_peering_id
+    #id = confluent_network.peering.id
   }
   depends_on = [
-    #var.confluent_environment_id,
+    var.confluent_environment_id,
     #var.confluent_network_aws_peering_id
-    confluent_environment.staging,
+    #confluent_environment.staging,
     confluent_network.peering
   ]
 }
