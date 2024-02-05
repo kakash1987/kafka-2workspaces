@@ -1,16 +1,16 @@
-#variable "confluent_cloud_api_key" {
-#  description = "Confluent Cloud API Key (also referred as Cloud API ID)"
-#  type        = string
-#  sensitive   = true
-#  default = "PRDI5NKO3K2XGAJJ"
-#}
+variable "confluent_cloud_api_key" {
+  description = "Confluent Cloud API Key (also referred as Cloud API ID)"
+  type        = string
+  sensitive   = true
+  default = ""
+}
 
-#variable "confluent_cloud_api_secret" {
-#  description = "Confluent Cloud API Secret"
-#  type        = string
-#  sensitive   = true
-#  default = "4Dtmgmat7Dw98AI0wK7Sz6WRYDTLevQY8HKxPokZknCtN6pu+tRnbRm8rZezy4rQ"
-#}
+variable "confluent_cloud_api_secret" {
+  description = "Confluent Cloud API Secret"
+  type        = string
+  sensitive   = true
+  default = "4Dtmgmat7Dw98AI0wK7Sz6WRYDTLevQY8HKxPokZknCtN6pu+tRnbRm8rZezy4rQ"
+}
 
 variable "kafka_api_key" {
   description = "Kafka API Key that is owned by service account that has permissions to create topics (e.g., has at least CloudClusterAdmin role)"
