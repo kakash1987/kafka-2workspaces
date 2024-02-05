@@ -53,7 +53,7 @@ variable "region" {
 variable "region2" {
   description = "The region of Confluent Cloud Network."
   type        = string
-  default     = "eu-west-2"
+  default     = "us-east-2"
 }
 
 variable "cidr" {
@@ -107,5 +107,5 @@ variable "customer_region" {
 variable "customer_region2" {
   description = "The region of the AWS peer VPC."
   type        = string
-  default     = "eu-west-2"
+  default     = "us-east-2"
 }
