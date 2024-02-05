@@ -368,6 +368,21 @@ module "peering_uk_app" {
   confluent_network_peering_cidr = confluent_network.peering.cidr
 }
 
+
+module "peering_uk_app" {
+  source = "../../modules/confluent-aws-peering"
+
+  aws_account_id                     = var.aws_account_id
+  customer_region                    = var.customer_region2
+  region                             = var.region2
+  vpc_id                             = var.vpc_id2
+  routes                             = var.routes2
+  confluent_environment_id           = confluent_environment.test.id
+  confluent_network_peering_id   = confluent_network.peering3.id
+  confluent_network_peering_vpc  = confluent_network.peering3.aws[0].vpc
+  confluent_network_peering_cidr = confluent_network.peering3.cidr
+}
+
 #output "confluent_environment_id" {
 #  value = confluent_environment.staging.id
 #}
