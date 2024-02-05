@@ -107,6 +107,10 @@ data "aws_route_tables" "rts" {
   vpc_id = var.vpc_id
 }
 
+data "aws_route_tables" "rts" {
+  vpc_id = var.vpc2_id
+}
+
 resource "aws_route" "r" {
   for_each                  = toset(data.aws_route_tables.rts.ids)
   route_table_id            = each.key
