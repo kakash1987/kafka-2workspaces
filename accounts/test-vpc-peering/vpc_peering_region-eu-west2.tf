@@ -33,7 +33,8 @@ depends_on = [
 }
 
 provider "aws" {
-  region = "us-east-2", "eu-west-2";
+  region = "us-east-2", 
+  region = "eu-west-2"
 }
 
 data "aws_vpc_peering_connection" "accepter3" {
