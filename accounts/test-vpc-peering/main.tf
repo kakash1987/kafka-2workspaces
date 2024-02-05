@@ -186,25 +186,25 @@ depends_on = [
 
 
 
-resource "confluent_peering" "aws" {
-  display_name = "AWS Peering"
-  aws {
-    account         = var.aws_account_id
-    vpc             = var.vpc_id
-    routes          = var.routes
-    customer_region = var.customer_region
-  }
-  environment {
-    id = confluent_environment.staging.id
-  }
-  network {
-    id = confluent_network.peering.id
-  }
-depends_on = [
-    confluent_environment.staging,
-    confluent_network.peering
-  ]
-}
+#resource "confluent_peering" "aws" {
+#  display_name = "AWS Peering"
+#  aws {
+#    account         = var.aws_account_id
+#    vpc             = var.vpc_id
+#    routes          = var.routes
+#    customer_region = var.customer_region
+#  }
+#  environment {
+#    id = confluent_environment.staging.id
+#  }
+#  network {
+#    id = confluent_network.peering.id
+#  }
+#depends_on = [
+#    confluent_environment.staging,
+#    confluent_network.peering
+#  ]
+#}
 
 #resource "confluent_peering" "aws3" {
 #  display_name = "AWS Peering 3"
@@ -302,17 +302,17 @@ depends_on = [
 # https://docs.confluent.io/cloud/current/networking/peering/aws-peering.html
 # Create a VPC Peering Connection to Confluent Cloud on AWS
 
-provider "aws" {
-  region = var.customer_region
-}
+#provider "aws" {
+#  region = var.customer_region
+#}
 
 # Accepter's side of the connection.
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpc_peering_connection
 
-data "aws_vpc_peering_connection" "accepter" {
-  vpc_id      = confluent_network.peering.aws[0].vpc
-  peer_vpc_id = confluent_peering.aws.aws[0].vpc
-}
+#data "aws_vpc_peering_connection" "accepter" {
+#  vpc_id      = confluent_network.peering.aws[0].vpc
+#  peer_vpc_id = confluent_peering.aws.aws[0].vpc
+#}
 
 #data "aws_vpc_peering_connection" "accepter3" {
 #  vpc_id      = confluent_network.peering3.aws[0].vpc
@@ -322,10 +322,10 @@ data "aws_vpc_peering_connection" "accepter" {
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_peering_connection_accepter
 
-resource "aws_vpc_peering_connection_accepter" "peer" {
-  vpc_peering_connection_id = data.aws_vpc_peering_connection.accepter.id
-  auto_accept               = true
-}
+#resource "aws_vpc_peering_connection_accepter" "peer" {
+#  vpc_peering_connection_id = data.aws_vpc_peering_connection.accepter.id
+#  auto_accept               = true
+#}
 
 #resource "aws_vpc_peering_connection_accepter" "peer3" {
 #  vpc_peering_connection_id = data.aws_vpc_peering_connection.accepter3.id
@@ -333,16 +333,16 @@ resource "aws_vpc_peering_connection_accepter" "peer" {
 #}
 
 # Find the routing table
-data "aws_route_tables" "rts" {
-  vpc_id = var.vpc_id
-}
+#data "aws_route_tables" "rts" {
+#  vpc_id = var.vpc_id
+#}
 
-resource "aws_route" "r" {
-  for_each                  = toset(data.aws_route_tables.rts.ids)
-  route_table_id            = each.key
-  destination_cidr_block    = confluent_network.peering.cidr
-  vpc_peering_connection_id = data.aws_vpc_peering_connection.accepter.id
-}
+#resource "aws_route" "r" {
+#  for_each                  = toset(data.aws_route_tables.rts.ids)
+#  route_table_id            = each.key
+#  destination_cidr_block    = confluent_network.peering.cidr
+#  vpc_peering_connection_id = data.aws_vpc_peering_connection.accepter.id
+#}
 
 #resource "aws_route" "r3" {
 #  for_each                  = toset(data.aws_route_tables.rts.ids)
@@ -351,3 +351,21 @@ resource "aws_route" "r" {
 #  vpc_peering_connection_id = data.aws_vpc_peering_connection.accepter3.id
 #}
 
+
+
+
+module "peering_uk_app" {
+  source = "../../../modules/confluent-aws-peering"
+
+  region                             = var.region
+  vpc_id                             = var.vpc_id
+  vpc_cidr_list                      = var.vpc_cidr_list
+  confluent_environment_id           = confluent_environment.staging.id
+  confluent_network_aws_peering_id   = confluent_network.aws_peering.id
+  confluent_network_aws_peering_vpc  = confluent_network.aws_peering.aws[0].vpc
+  confluent_network_aws_peering_cidr = confluent_network.aws_peering.cidr
+}
+
+output "confluent_environment_id" {
+  value = confluent_environment.this.id
+}
