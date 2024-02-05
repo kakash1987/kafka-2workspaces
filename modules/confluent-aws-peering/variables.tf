@@ -11,7 +11,6 @@ variable "vpc_id" {
 variable "routes" {
   description = "The AWS VPC CIDR blocks or subsets. This must be from the supported CIDR blocks and must not overlap with your Confluent Cloud CIDR block or any other network peering connection VPC CIDR."
   type        = list(string)
-  default     = ["10.0.0.0/16"]
 }
 
 variable "confluent_environment_id" {
@@ -33,11 +32,9 @@ variable "confluent_network_aws_peering_cidr" {
 variable "customer_region" {
   description = "The region of the AWS peer VPC."
   type        = string
-  default     = "us-east-2"
 }
 
 variable "aws_account_id" {
   description = "The AWS Account ID of the peer VPC owner (12 digits)."
   type        = string
-  default     = "221896574556"
 }
