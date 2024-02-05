@@ -53,7 +53,7 @@ variable "region" {
 variable "region2" {
   description = "The region of Confluent Cloud Network."
   type        = string
-  default     = "us-east-2"
+  default     = "eu-west-2"
 }
 
 variable "cidr" {
