@@ -9,7 +9,7 @@ variable "confluent_cloud_api_secret" {
   description = "Confluent Cloud API Secret"
   type        = string
   sensitive   = true
-  default = "4Dtmgmat7Dw98AI0wK7Sz6WRYDTLevQY8HKxPokZknCtN6pu+tRnbRm8rZezy4rQ"
+  default = ""
 }
 
 variable "kafka_api_key" {
