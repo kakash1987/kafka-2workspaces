@@ -27,8 +27,8 @@ provider "aws" {
 }
 
 data "aws_vpc_peering_connection" "accepter" {
-  #vpc_id      = var.confluent_network_aws_peering_vpc
-  vpc_id      = confluent_network.peering.aws[0].vpc
+  vpc_id      = var.confluent_network_aws_peering_vpc
+  #vpc_id      = confluent_network.peering.aws[0].vpc
   peer_vpc_id = confluent_peering.aws.aws[0].vpc
 }
 
