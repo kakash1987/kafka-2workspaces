@@ -358,7 +358,7 @@ module "peering_uk_app" {
   source = "../../modules/confluent-aws-peering"
 
   aws_account_id                     = var.aws_account_id
-  customer_region                    = var.customer.region
+  customer_region                    = var.customer_region
   region                             = var.region
   vpc_id                             = var.vpc_id
   routes                             = var.routes
