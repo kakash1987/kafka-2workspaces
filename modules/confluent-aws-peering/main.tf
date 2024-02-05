@@ -16,9 +16,9 @@ resource "confluent_peering" "aws" {
   }
   depends_on = [
     var.confluent_environment_id,
-    #var.confluent_network_aws_peering_id
+    var.confluent_network_aws_peering_id
     #confluent_environment.staging,
-    confluent_network.peering
+    #confluent_network.peering
   ]
 }
 
