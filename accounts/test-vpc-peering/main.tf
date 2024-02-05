@@ -302,9 +302,9 @@ depends_on = [
 # https://docs.confluent.io/cloud/current/networking/peering/aws-peering.html
 # Create a VPC Peering Connection to Confluent Cloud on AWS
 
-#provider "aws" {
-#  region = var.customer_region
-#}
+provider "aws" {
+  region = var.customer_region
+}
 
 # Accepter's side of the connection.
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpc_peering_connection
