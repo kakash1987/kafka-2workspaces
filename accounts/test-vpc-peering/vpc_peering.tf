@@ -119,7 +119,7 @@ resource "aws_route" "r" {
 }
 
 resource "aws_route" "r3" {
-  for_each                  = toset(data.aws_route_tables.rts.ids)
+  for_each                  = toset(data.aws_route_tables.rts2.ids)
   route_table_id            = each.key
   destination_cidr_block    = confluent_network.peering3.cidr
   vpc_peering_connection_id = data.aws_vpc_peering_connection.accepter3.id
