@@ -359,7 +359,7 @@ module "peering_uk_app" {
 
   region                             = var.customer.region
   vpc_id                             = var.vpc_id
-  vpc_cidr_list                      = var.routes
+  routes                             = var.routes
   confluent_environment_id           = confluent_environment.staging.id
   confluent_network_aws_peering_id   = confluent_network.peering.id
   confluent_network_aws_peering_vpc  = confluent_network.peering.aws[0].vpc
