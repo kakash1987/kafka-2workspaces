@@ -357,15 +357,15 @@ depends_on = [
 module "peering_uk_app" {
   source = "../../../modules/confluent-aws-peering"
 
-  region                             = var.region
+  region                             = var.customer.region
   vpc_id                             = var.vpc_id
-  vpc_cidr_list                      = var.vpc_cidr_list
+  vpc_cidr_list                      = var.routes
   confluent_environment_id           = confluent_environment.staging.id
-  confluent_network_aws_peering_id   = confluent_network.aws_peering.id
-  confluent_network_aws_peering_vpc  = confluent_network.aws_peering.aws[0].vpc
-  confluent_network_aws_peering_cidr = confluent_network.aws_peering.cidr
+  confluent_network_aws_peering_id   = confluent_network.peering.id
+  confluent_network_aws_peering_vpc  = confluent_network.peering.aws[0].vpc
+  confluent_network_aws_peering_cidr = confluent_network.peering.cidr
 }
 
 output "confluent_environment_id" {
-  value = confluent_environment.this.id
+  value = confluent_environment.staging.id
 }
