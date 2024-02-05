@@ -17,15 +17,15 @@ variable "confluent_environment_id" {
   type = string
 }
 
-variable "confluent_network_aws_peering_id" {
+variable "confluent_network_peering_id" {
   type = string
 }
 
-variable "confluent_network_aws_peering_vpc" {
+variable "confluent_network_peering_vpc" {
   type = string
 }
 
-variable "confluent_network_aws_peering_cidr" {
+variable "confluent_network_peering_cidr" {
   type = string
 }
 
