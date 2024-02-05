@@ -32,9 +32,9 @@ depends_on = [
   ]
 }
 
-provider "aws" {
-  region = var.customer_region2
-}
+#provider "aws" {
+#  region = var.customer_region2
+#}
 
 data "aws_vpc_peering_connection" "accepter3" {
   vpc_id      = confluent_network.peering3.aws[0].vpc
