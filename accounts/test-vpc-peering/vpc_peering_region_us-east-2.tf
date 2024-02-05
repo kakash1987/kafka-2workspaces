@@ -73,7 +73,6 @@ depends_on = [
 # Create a VPC Peering Connection to Confluent Cloud on AWS
 
 provider "aws" {
-  alias = "us-east-2"
   region = "us-east-2"
 }
 
