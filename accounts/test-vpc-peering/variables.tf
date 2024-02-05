@@ -1,30 +1,30 @@
-variable "confluent_cloud_api_key" {
-  description = "Confluent Cloud API Key (also referred as Cloud API ID)"
-  type        = string
-  sensitive   = true
-  default = "PRDI5NKO3K2XGAJJ"
-}
+#variable "confluent_cloud_api_key" {
+#  description = "Confluent Cloud API Key (also referred as Cloud API ID)"
+#  type        = string
+#  sensitive   = true
+#  default = "PRDI5NKO3K2XGAJJ"
+#}
 
-variable "confluent_cloud_api_secret" {
-  description = "Confluent Cloud API Secret"
-  type        = string
-  sensitive   = true
-  default = "4Dtmgmat7Dw98AI0wK7Sz6WRYDTLevQY8HKxPokZknCtN6pu+tRnbRm8rZezy4rQ"
-}
+#variable "confluent_cloud_api_secret" {
+#  description = "Confluent Cloud API Secret"
+#  type        = string
+#  sensitive   = true
+#  default = "4Dtmgmat7Dw98AI0wK7Sz6WRYDTLevQY8HKxPokZknCtN6pu+tRnbRm8rZezy4rQ"
+#}
 
-variable "kafka_api_key" {
-  description = "Kafka API Key that is owned by service account that has permissions to create topics (e.g., has at least CloudClusterAdmin role)"
-  type        = string
-  sensitive   = true
-  default     = ""
-}
+#variable "kafka_api_key" {
+#  description = "Kafka API Key that is owned by service account that has permissions to create topics (e.g., has at least CloudClusterAdmin role)"
+#  type        = string
+#  sensitive   = true
+#  default     = ""
+#}
 
-variable "kafka_api_secret" {
-  description = "Kafka API Secret"
-  type        = string
-  sensitive   = true
-  default     = ""
-}
+#variable "kafka_api_secret" {
+#  description = "Kafka API Secret"
+#  type        = string
+#  sensitive   = true
+#  default     = ""
+#}
 
 variable "kafka_rest_endpoint" {
   description = "The REST Endpoint of the Kafka cluster"
@@ -45,6 +45,12 @@ variable "topics" {
 }
 
 variable "region" {
+  description = "The region of Confluent Cloud Network."
+  type        = string
+  default     = "us-east-2"
+}
+
+variable "region2" {
   description = "The region of Confluent Cloud Network."
   type        = string
   default     = "us-east-2"
@@ -71,7 +77,7 @@ variable "aws_account_id" {
 variable "vpc_id" {
   description = "The AWS VPC ID of the peer VPC that you're peering with Confluent Cloud."
   type        = string
-  default     = "vpc-069a48166920054b7"
+  default     = "vpc-0b357eb415f2e203d"
 }
 
 variable "vpc2_id" {
@@ -96,4 +102,10 @@ variable "customer_region" {
   description = "The region of the AWS peer VPC."
   type        = string
   default     = "us-east-2"
+}
+
+variable "customer_region2" {
+  description = "The region of the AWS peer VPC."
+  type        = string
+  default     = "eu-west-2"
 }
