@@ -357,7 +357,7 @@ depends_on = [
 module "peering_uk_app" {
   source = "../../modules/confluent-aws-peering"
 
-  region                             = var.customer.region
+  region                             = var.customer_region
   vpc_id                             = var.vpc_id
   routes                             = var.routes
   confluent_environment_id           = confluent_environment.staging.id
