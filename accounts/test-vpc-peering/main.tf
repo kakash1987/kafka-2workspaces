@@ -375,7 +375,7 @@ module "peering_uk_app2" {
   aws_account_id                     = var.aws_account_id
   customer_region                    = var.customer_region2
   region                             = var.region2
-  vpc_id                             = var.vpc_id2
+  vpc_id                             = var.vpc2_id
   routes                             = var.routes2
   confluent_environment_id           = confluent_environment.test.id
   confluent_network_peering_id   = confluent_network.peering3.id
