@@ -50,11 +50,7 @@ variable "region" {
   default     = "us-east-2"
 }
 
-variable "region2" {
-  description = "The region of Confluent Cloud Network."
-  type        = string
-  default     = "us-east-2"
-}
+
 
 variable "cidr" {
   description = "The CIDR of Confluent Cloud Network."
