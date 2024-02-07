@@ -47,8 +47,8 @@ module "confluent_kafka_topics" {
   kafka_rest_endpoint   = data.terraform_remote_state.confluent_kafka_cluster.outputs.confluent_kafka_cluster_rest_endpoint
   kafka_api_key         = data.terraform_remote_state.confluent_api_key.outputs.confluent_api_key_id
   kafka_api_secret      = data.terraform_remote_state.confluent_api_key.outputs.confluent_api_key_secret
-  cloud_api_key         = var.confluent_cloud_api_key
-  cloud_api_secret      = var.confluent_cloud_api_secret
+  #cloud_api_key         = var.confluent_cloud_api_key
+  #cloud_api_secret      = var.confluent_cloud_api_secret
   environment_id        = data.terraform_remote_state.confluent_environment.outputs.confluent_environment_id
   kafka_api_version     = data.terraform_remote_state.confluent_kafka_cluster.outputs.confluent_kafka_cluster_api_version
   kafka_kind            = data.terraform_remote_state.confluent_kafka_cluster.outputs.confluent_kafka_cluster_kind
