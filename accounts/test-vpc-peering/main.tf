@@ -34,17 +34,17 @@ module "peering_uk_app" {
 }
 
 
-module "peering_uk_app2" {
-  source = "../../modules/confluent-aws-peering"
+#module "peering_uk_app2" {
+#  source = "../../modules/confluent-aws-peering"
 
-  aws_account_id                     = var.aws_account_id
-  customer_region                    = var.customer_region
-  region                             = var.region
-  vpc_id                             = var.vpc2_id
-  routes                             = var.routes2
-  confluent_environment_id           = confluent_environment.peering.id
-  confluent_network_peering_id   = confluent_network.peering.id
-  confluent_network_peering_vpc  = confluent_network.peering.aws[0].vpc
-  confluent_network_peering_cidr = confluent_network.peering.cidr
-}
+#  aws_account_id                     = var.aws_account_id
+#  customer_region                    = var.customer_region
+#  region                             = var.region
+#  vpc_id                             = var.vpc2_id
+#  routes                             = var.routes2
+#  confluent_environment_id           = confluent_environment.peering.id
+#  confluent_network_peering_id   = confluent_network.peering.id
+#  confluent_network_peering_vpc  = confluent_network.peering.aws[0].vpc
+#  confluent_network_peering_cidr = confluent_network.peering.cidr
+#}
 
