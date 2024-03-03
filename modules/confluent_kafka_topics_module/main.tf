@@ -34,6 +34,12 @@ for key, value in confluent_kafka_topic.main : value.topic_name
 ]
 }
 
+output "first_topik_name" {
+  value = topik_name[0]
+}
+
+
+
 
 
 resource "confluent_service_account" "app-consumer" {
