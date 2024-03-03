@@ -28,18 +28,18 @@ resource "confluent_kafka_topic" "main" {
 
 }
 
-output "topic_name" {
-value = [
-for key, value in confluent_kafka_topic.main : value.topic_name
-]
-}
+#output "topic_name" {
+#value = [
+#for key, value in confluent_kafka_topic.main : value.topic_name
+#]
+#}
 
 output "first_topic_name" {
-  value = confluent_kafka_topic.main.topic_name[0]
+  value = confluent_kafka_topic.main[0].topic_name
 }
 
 output "second_topic_name" {
-  value = confluent_kafka_topic.main.topic_name[1]
+  value = confluent_kafka_topic.main[1].topic_name
 }
 
 
