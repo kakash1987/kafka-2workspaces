@@ -61,7 +61,7 @@ module "confluent_kafka_topics" {
 
 output "topic_name" {
   value = {
-    for k, v in module.confluent_kafka_topics.confluent_kafka_topic.main : k => v.topic_name
+    for k, v in module.confluent_kafka_topics : k => v.topic_name
   }
 }
 
