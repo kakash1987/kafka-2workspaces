@@ -24,7 +24,7 @@ output "API_KEY_Consumers_id" {
   value = {for k, v in confluent_api_key.app-consumer-kafka-api-key: k => v.id}
 }
 
-output "API_KEY_Consumer_secret" {
+output "API_KEY_Consumers_secret" {
   value = {for k, v in confluent_api_key.app-consumer-kafka-api-key: k => v.secret}
 }
 
