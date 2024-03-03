@@ -35,11 +35,11 @@ resource "confluent_kafka_topic" "main" {
 #}
 
 output "first_topic_name" {
-  value = confluent_kafka_topic.main.[0].topic_name
+  value = confluent_kafka_topic.main.topic_name[0]
 }
 
 output "second_topic_name" {
-  value = confluent_kafka_topic.main.[1].topic_name
+  value = confluent_kafka_topic.main.topic_name[1]
 }
 
 
