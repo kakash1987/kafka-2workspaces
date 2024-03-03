@@ -35,11 +35,11 @@ for key, value in confluent_kafka_topic.main : value.topic_name
 }
 
 output "first_topic_name" {
-  value = topic_name[0]
+  value = confluent_kafka_topic.main.topic_name[0]
 }
 
 output "second_topic_name" {
-  value = topic_name[1]
+  value = confluent_kafka_topic.main.topic_name[1]
 }
 
 
