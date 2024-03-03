@@ -58,3 +58,9 @@ module "confluent_kafka_topics" {
   topics                = jsondecode(file("topics.json"))
 
 }
+
+output "topic_name" {
+  value = {
+    for k, v in confluent_kafka_topic.main : k => v.topic_name
+  }
+}
