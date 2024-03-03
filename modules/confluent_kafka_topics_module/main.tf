@@ -25,9 +25,7 @@ resource "confluent_kafka_topic" "main" {
   lifecycle {
     prevent_destroy = false
   }
-output "topic_name" {
-  value = confluent_kafka_topic.main[each.key].topic_name 
-}
+
 }
 
 
@@ -36,6 +34,9 @@ resource "confluent_service_account" "app-consumer" {
   for_each = var.topics
   display_name = each.value.consumer
   description  = "Service account to consume from '${each.key}' topic of 'inventory' Kafka cluster"
+}
+output "SA_name" {
+  value = confluent_service_account.app-comsumer[each.key].display_name 
 }
 
 resource "confluent_api_key" "app-consumer-kafka-api-key" {
