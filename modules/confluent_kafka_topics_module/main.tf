@@ -36,7 +36,7 @@ resource "confluent_service_account" "app-consumer" {
   description  = "Service account to consume from '${each.key}' topic of 'inventory' Kafka cluster"
 }
 output "SA_name" {
-  value = confluent_service_account.app-comsumer[each.key].display_name 
+  value = confluent_service_account.app-consumer[each.key].display_name 
 }
 
 resource "confluent_api_key" "app-consumer-kafka-api-key" {
