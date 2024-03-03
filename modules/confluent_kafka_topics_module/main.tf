@@ -25,11 +25,12 @@ resource "confluent_kafka_topic" "main" {
   lifecycle {
     prevent_destroy = false
   }
-}
-
 output "topic_name" {
   value = confluent_kafka_topic.main[each.key].topic_name 
 }
+}
+
+
 
 resource "confluent_service_account" "app-consumer" {
   for_each = var.topics
