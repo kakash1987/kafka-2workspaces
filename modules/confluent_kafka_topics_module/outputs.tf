@@ -21,11 +21,11 @@
 
 
 output "API_KEY_Consumers_id" {
-  value = {for k, v in confluent_service_account.app-consumer: k => v.id}
+  value = {for k, v in confluent_api_key.app-consumer-kafka-api-key: k => v.id}
 }
 
 output "API_KEY_Consumer_secret" {
-  value = {for k, v in confluent_service_account.app-consumer: k => v.secret}
+  value = {for k, v in confluent_api_key.app-consumer-kafka-api-key: k => v.secret}
 }
 
 
