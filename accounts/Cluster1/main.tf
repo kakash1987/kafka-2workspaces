@@ -57,12 +57,6 @@ module "confluent_kafka_topics" {
   confluent_service_account_kind        = data.terraform_remote_state.confluent_service_account.outputs.confluent_service_account_app-manager_kind
   topics                = jsondecode(file("topics.json"))
 
-output "topic_name" {
-  value = {
-    for k, v in confluent_kafka_topic.main : k => v.topic_name
-  }
-}
-
 }
 
 
