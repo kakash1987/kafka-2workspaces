@@ -1,3 +1,11 @@
 output "topic_name" {
     value = confluent_topic_name.main
 }
+
+output "bd_name" {
+  value = values(confluent_topic_name.main).*.name
+}
+
+output "bd_name" {
+  value = values(confluent_topic_name.main)[*].name
+}
