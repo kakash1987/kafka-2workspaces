@@ -10,7 +10,7 @@ output "service_accounts_consumers" {
 
 output "confluent_api_key" {
   description = "Map of created API keys for consumers"
-  value       = confluent_api_key.app-producer-kafka-api-key
+  value       = confluent_api_key.app-producer-kafka-api-key.id
 }
 
 
