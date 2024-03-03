@@ -28,9 +28,15 @@ resource "confluent_kafka_topic" "main" {
 
 }
 
-output "bd_name" {
-  value = values(confluent_kafka_topic.main)[*].topic_name
+output "topic_name" {
+  value = {
+    for k, v in confluent_kafka_topic.main : k => v.topic_name
+  }
 }
+
+#output "bd_name" {
+#  value = values(confluent_kafka_topic.main)[*].topic_name
+#}
 
 #output "topic_name" {
 #value = [
