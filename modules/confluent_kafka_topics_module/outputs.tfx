@@ -1,11 +1,12 @@
-output "topic_name" {
-    value = confluent_topic_name.main
+output "bd_name" {
+  value = values(confluent_kafka_topic.main).*.name
 }
 
 output "bd_name" {
-  value = values(confluent_topic_name.main).*.name
+  value = values(confluent_kafka_topic.main)[*].name
 }
 
-output "bd_name" {
-  value = values(confluent_topic_name.main)[*].name
+output "kafka_topics" {
+  description = "Map of created Confluent Kafka topics"
+  value       = confluent_kafka_topic.main
 }
