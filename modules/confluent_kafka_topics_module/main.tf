@@ -28,19 +28,23 @@ resource "confluent_kafka_topic" "main" {
 
 }
 
+output "bd_name" {
+  value = values(confluent_kafka_topic.main).*.topic_name
+}
+
 #output "topic_name" {
 #value = [
 #for key, value in confluent_kafka_topic.main : value.topic_name
 #]
 #}
 
-output "first_topic_name" {
-  value = confluent_kafka_topic.main.topic_name[0]
-}
+#output "first_topic_name" {
+#  value = confluent_kafka_topic.main.topic_name[0]
+#}
 
-output "second_topic_name" {
-  value = confluent_kafka_topic.main.topic_name[1]
-}
+#output "second_topic_name" {
+#  value = confluent_kafka_topic.main.topic_name[1]
+#}
 
 
 
