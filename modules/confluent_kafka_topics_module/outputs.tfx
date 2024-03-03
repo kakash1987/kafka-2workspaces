@@ -2,7 +2,7 @@ output "bd_name" {
   value = values(confluent_kafka_topic.main).*.name
 }
 
-output "bd_name" {
+output "bd_name2" {
   value = values(confluent_kafka_topic.main)[*].name
 }
 
