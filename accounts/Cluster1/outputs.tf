@@ -6,7 +6,7 @@
 
 output "created_service_accounts_consumers" {
   description = "Map of created SA for consumers"
-  value       = values(module.confluent_kafka_topics.service_accounts_consumers).*.id
+  value       = module.confluent_kafka_topics.service_accounts_consumers.*.id
 }
 
 #output "created_confluent_api_key" {
