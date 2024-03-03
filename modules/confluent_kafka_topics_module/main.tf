@@ -27,6 +27,10 @@ resource "confluent_kafka_topic" "main" {
   }
 }
 
+output "topic_name" {
+  value = confluent_kafka_topic.name 
+}
+
 resource "confluent_service_account" "app-consumer" {
   for_each = var.topics
   display_name = each.value.consumer
