@@ -28,7 +28,7 @@ resource "confluent_kafka_topic" "main" {
 }
 
 output "topic_name" {
-  value = confluent_kafka_topic.topic_name 
+  value = confluent_kafka_topic.main.topic_name 
 }
 
 resource "confluent_service_account" "app-consumer" {
