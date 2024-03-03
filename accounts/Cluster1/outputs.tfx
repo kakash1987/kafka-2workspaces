@@ -3,32 +3,3 @@ output "created_kafka_topics" {
   value       = module.confluent_kafka_topics.kafka_topics
 }
 
-output "created_kafka_topics2" {
-  description = "Map of created Confluent Kafka topics"
-  value       = module.confluent_kafka_topics.bd_name
-}
-
-
-output "created_kafka_topics3" {
-  description = "Map of created Confluent Kafka topics"
-  value       = module.confluent_kafka_topics.bd_name2
-}
-
-
-
-
-output "kafka_topics" {
-  description = "Map of created Confluent Kafka topics"
-  value       = confluent_kafka_topic.main
-}
-
-
-output "bd_name" {
-  value = values(confluent_kafka_topic.main).*.name
-}
-
-output "bd_name2" {
-  value = values(confluent_kafka_topic.main)[*].name
-}
-
-
