@@ -27,7 +27,7 @@ output "API_KEY_Consumers_id" {
 }
 
 output "API_KEY_Consumer_secret" {
-  value = module.confluent_kafka_topics.API_KEY_Consumers_id
+  value = module.confluent_kafka_topics.API_KEY_Consumers_secret
 }
 
 
