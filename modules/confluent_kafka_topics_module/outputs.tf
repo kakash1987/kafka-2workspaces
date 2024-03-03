@@ -26,6 +26,7 @@ output "API_KEY_Consumers_id" {
 
 output "API_KEY_Consumers_secret" {
   value = {for k, v in confluent_api_key.app-consumer-kafka-api-key: k => v.secret}
+  sensitive = true
 }
 
 
