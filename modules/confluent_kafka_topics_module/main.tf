@@ -34,10 +34,6 @@ for key, value in confluent_kafka_topic.main : value.topic_name
 ]
 }
 
-output "first_topic_name" {
-  value = topic_name[0]
-}
-
 
 
 
