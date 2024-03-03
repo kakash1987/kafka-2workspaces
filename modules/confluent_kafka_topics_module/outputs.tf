@@ -14,9 +14,18 @@
 #}
 
 
+#OVA RABOTI CARE
+#output "target-groups-arn-alternatice" {
+#  value = {for k, v in confluent_service_account.app-consumer: k => v.id}
+#}
 
-output "target-groups-arn-alternatice" {
+
+output "API_KEY_Consumers_id" {
   value = {for k, v in confluent_service_account.app-consumer: k => v.id}
+}
+
+output "API_KEY_Consumer_secret" {
+  value = {for k, v in confluent_service_account.app-consumer: k => v.secret}
 }
 
 
